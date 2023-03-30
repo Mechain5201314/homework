@@ -4,7 +4,7 @@
 using namespace std;
 int main(){
 	Complex num[20];
-	cout << "Ëæ»úÉú³ÉÒ»¸öÎŞĞòµÄ¸´ÊıÏòÁ¿" <<endl; 
+	cout << "éšæœºç”Ÿæˆä¸€ä¸ªæ— åºçš„å¤æ•°å‘é‡" <<endl; 
 	for (int i = 0; i < 20; i++){
 		num[i].n_Real(rand() % 20 + 10);num[i].n_Imaginary(rand() % 20 + 10);num[i].n_modulus();
 		num[i].display();}
@@ -13,47 +13,40 @@ int main(){
 
 
 	num1.unsort(0,20);
-	cout <<endl<< "½øĞĞÖÃÂÒ" << endl;
+	cout <<endl<< "è¿›è¡Œç½®ä¹±" << endl;
 	for(int j=0;j<20;j++)
 		num1._elem[j].display();
-	//ÖÃÂÒ 
+	//ç½®ä¹± 
 
 	cout<<endl;
 	int local;
 	local = num1.find0(num[0]);
-	cout<<endl<<"Ô­ÏòÁ¿×éµÚÒ»¸öÔªËØÖÃÂÒºóµÄÎ»ÖÃÎª"<<endl<<local<<endl;
-	//²éÕÒ
+	cout<<endl<<"åŸå‘é‡ç»„ç¬¬ä¸€ä¸ªå…ƒç´ ç½®ä¹±åçš„ä½ç½®ä¸º"<<endl<<local<<endl;
+	//æŸ¥æ‰¾
 
 	Vector<Complex> num2(num,1);
 	num2[0].n_Real(rand() % 200 / 10 );
 	num2[0].n_Imaginary(rand() % 200 / 10 );
 	num1.insert( 10, num2[0]);
-	cout<<endl<<"°ÑÒ»¸öËæ»úÏòÁ¿²åÈëµ½Ä©Î²" <<endl; 
+	cout<<endl<<"æŠŠä¸€ä¸ªéšæœºå‘é‡æ’å…¥åˆ°æœ«å°¾" <<endl; 
 	for(int j = 0 ;j <=20; j++ )
 		num1._elem[j].display(); 
 	cout<<endl;
-	//²åÈë
+	//æ’å…¥
 
-	cout<<endl<<"É¾³ıµÚÒ»¸öÏòÁ¿"<<endl;
-	num1.remove(10);
+	cout<<endl<<"åˆ é™¤ç¬¬ä¸€ä¸ªå‘é‡"<<endl;
+	num1.remove(0);
 	for(int j=0;j<20;j++)
 		num1._elem[j].display();
 	cout<<endl;
-	//É¾³ı
+	//åˆ é™¤
+	int a=num1.deduplicate();
+	cout << endl << "åˆ é™¤é‡å¤å…ƒç´ ï¼š" << a << "ä¸ª" << endl << "å”¯ä¸€åŒ–åçš„å¤æ•°å‘é‡:" << endl;
+	for (int i = 0; i < 20 - j; i++) {
+		num1[i].display();
+	}
+	cout << endl;
+	cout << endl;
+}
 
-	Vector<Complex> num3(num,1);
-	num3[0].n_Real(4);
-	num3[0].n_Imaginary(6);
-	int k = rand() % 8 + 2; 
-	for( int j = 0; j < k; j++)
-	num1.insert(rand() % 8 + 2 , num3[0]);
-	cout<<endl<<"Î¨Ò»»¯Ç°£º"<<endl;
-	for(int j = 0; j <=20 + k; j++ )
-		num1._elem[j].display();
-	int x = num1.deduplicate();
-	cout<<endl<<"ÖØ¸´ÔªËØ¸öÊı: "<< x <<endl;
-	cout<<endl<<"Î¨Ò»»¯ºó£º"<<endl;
-	num1.deduplicate();
-	for(int j = 0; j < (20 + k - x) ; j++ )
-		num1._elem[j].display();}
-	//Î¨Ò»»¯
+	//å”¯ä¸€åŒ–
