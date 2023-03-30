@@ -42,7 +42,7 @@ int main(){
 	//删除
 	int a=num1.deduplicate();
 	cout << endl << "删除重复元素：" << a << "个" << endl << "唯一化后的复数向量:" << endl;
-	for (int i = 0; i < 20 - j; i++) {
+	for (int i = 0; i < 20 - a; i++) {
 		num1[i].display();
 	}
 	cout << endl;
